@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualiser</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(15, 20, 25);
+            overflow: hidden;
+            height: 100vh;
+            cursor: none;
+        }
+.bg{
+    z-index: -10;
+    background-image: url("/images/bg8.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px);
+    display: inline-block;
+    width: 100%;
+    height: 800px;
+    overflow: visible;
+    position: relative;
+    background-position: 0px -100px;
+}
+        h1 {
+            color: white;
+            font-size: 2rem;
+            padding: 10px ;
+            margin-bottom: 20px;
+            word-spacing: 4px;
+        }
+        /* #clr {
+            color: aquamarine;
+        } */
+        .exit {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            mix-blend-mode: difference;
+        }
+        .exit:hover{
+            color: white;
+            border: 1px solid white;
+            mix-blend-mode: difference;
+        }
+        .curzor {
+            top: -5%;
+            width: 2rem;
+            height: 2rem;
+            background: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            mix-blend-mode: difference;
+            transition: opacity 300ms ease;
+        }
+        .container{
+            max-width: 400px;
+            height: 600px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .bar {
+            width: 15px;
+            padding-right: 1px;
+            border: 2px solid black;
+            transition: height 0.2s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.86);
+            border-radius: 4px;
+            mix-blend-mode: difference;
+            opacity: 1;
+        }
+        .range1{
+            background-color: aquamarine;
+            color:orangered;
+        }
+
+        .bar_container {
+            position: fixed;
+            top: 70px;
+            margin: 2px 5px;
+            padding: 0 5px 8px;
+            display: flex;
+            flex-direction: row;
+            border-top: 2px solid rgba(236, 227, 229, 0.875);
+            mix-blend-mode: difference;
+            opacity: 0.8;
+            /* border: 1px solid black; */
+        }
+        /* .equ_container {
+            background-color: white;
+            border: 2px solid white;
+            height: 50%;
+            width: 50%;
+            margin: 2px 5px;
+            padding: 0 5px 8px;
+        } */
+        
+        button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 7px;
+            border-radius: 5px;
+            width: 110px;
+            height: 60px;
+            mix-blend-mode: difference;
+        }
+        button:hover {
+            border: 2px solid rgb(236, 105, 12);
+            color: rgb(247, 241, 242);
+            background-color: rgb(15, 20, 25);
+            box-shadow: 0 0 10px 0px rgba(243, 223, 223, 0.2);
+        }
+
+        #buttons_container {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #input {
+            text-transform: uppercase;
+            color: white;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }        
+        #arraySize, #arraySpeed {
+            cursor: pointer;
+        }
+        /* #arraySpeed {
+            direction: rtl;
+        } */
+
+        @media (max-width: 700px) {
+            .bar {
+                max-width: 400px;
+                height: 100px;
+                width: 6px;
+                z-index: -1;
+            }
+            .bar_container {
+                max-width: 600px;
+            }
+            button {
+            padding: 6px;
+            margin: 2px;
+            border-radius: 5px;
+            }
+            #buttons_container {
+                z-index: 2;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            #input {
+                z-index: 1;
+                display: flex;
+                flex-wrap: wrap;
+                bottom: 3px;
+            }
+            .curzor {
+                z-index: 5;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="header" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <h1>Sorting <span id="clr">Visual</span>iser</h1>
+    <a href="/index.html"><button class="exit" id="exit" >Exit</button></a>
+    </div>
+    <div class="bg"></div>
+
+    <div class="container">
+        <div class="bar_container" id="bar_container">
+            <!-- <div class="bar" ></div> -->
+        </div>
+        
+        
+        <div class="footer">
+        <div id="buttons_container">
+            <button id="new_array" onclick="generateArray()">New Array</button>
+            <button id="bubbleSort" >Bubble Sort</button>
+            <button id="selectionSort">Selection Sort</button>
+            <button id="mergeSort">Merge Sort</button>
+            <button id="quickSort">Quick Sort</button>
+            <button id="insertionSort">Insertion Sort</button>
+        </div>
+
+        <div id="input">
+            <span id="size">size
+            <input  type="range" id="arraySize" min="5" max="66" step="1" value="20" oninput="arraySize()">
+            </span>
+            <span id="speed">speed
+                <input type="range" id="arraySpeed" min="-500" max="10" step="10" value="-250" oninput="arraySpeed()">
+            </span>
+        </div>
+        </div>
+    </div>
+    <div class="curzor"></div>
+    <script src="index.js"></script>
+    <script src="./sortingAlgos/bubbleSort.js"></script>
+    <script src="./sortingAlgos/selectionSort.js"></script>
+    <script src="./sortingAlgos/insertionSort.js"></script>
+    <script src="./sortingAlgos/quickSort.js"></script>
+    <script src="./sortingAlgos/mergeSort.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+     
+    </script>
+</body>
+</html>
+

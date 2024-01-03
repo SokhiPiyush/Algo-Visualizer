@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Algo</title>
+  <meta charset="UTF-8">
+  <title>V.Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+  <!-- <link href="giphytext.css" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="page1.css">
+
+  <style>
+    /* section {
+      width: 100vw;
+    }
+    .outer-container {
+      scroll-snap-type: y mandatory;
+    }
+
+    .inner-container {
+      scroll-snap-type: start;
+    } */
+
+    .about-sorting {
+      scroll-snap-type: y mandatory;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0px;
+      padding: 5px;
+
+    }
+
+    .algo {
+      scroll-snap-align: start;
+      background-color: white;
+      border-radius: 6px;
+      color: black;
+      padding: 16px;
+      width: 220px;
+      height: 380px;
+      overflow: hidden;
+      transition: 0.6s;
+      transform: translate(0);
+      font-weight: 400;
+      margin: 0;
+      box-sizing: border-box;
+      /* margin-bottom: 3px; */
+    }
+
+    .algo:hover {
+      color: white;
+    }
+
+    .algo p {
+      margin: 0;
+    }
+
+    .algo::before {
+      content: "";
+      position: absolute;
+      top: -75px;
+      left: -45px;
+      z-index: -1;
+      background: linear-gradient(to right, #3bd9d9, #36a6bf);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      transition: 0.6s;
+      background: -moz-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(118, 191, 36, 1) 25%, rgba(224, 117, 35, 1) 50%, rgba(242, 38, 42, 1) 75%, rgba(130, 100, 70, 1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 87, 153, 1)), color-stop(25%, rgba(118, 191, 36, 1)), color-stop(50%, rgba(224, 117, 35, 1)), color-stop(75%, rgba(242, 38, 42, 1)), color-stop(100%, rgba(130, 100, 70, 1)));
+      background: -webkit-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(118, 191, 36, 1) 25%, rgba(224, 117, 35, 1) 50%, rgba(242, 38, 42, 1) 75%, rgba(130, 100, 70, 1) 100%);
+      background: linear-gradient(to bottom, rgba(30, 87, 153, 1) 0%, rgba(118, 191, 36, 1) 25%, rgba(224, 117, 35, 1) 50%, rgba(242, 38, 42, 1) 75%, rgba(130, 100, 70, 1) 100%);
+      background-size: 100% 400%;
+      background-position: 0 0;
+      -webkit-animation: animateGradient 5s ease 1;
+      -moz-animation: animateGradient 4s ease 1;
+      animation: animateGradient 4s infinite;
+      -webkit-animation-delay: 2s;
+      -moz-animation-delay: 1s;
+      animation-delay: 2s;
+    }
+
+    .algo:hover::before {
+      transform: scale(4.5);
+    }
+
+    .about-sorting {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    @-webkit-keyframes animateGradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 0 100%;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    @-moz-keyframes animateGradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 0 100%;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    @keyframes animateGradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 0 100%;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .info-algo {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="vlogo"><a href="index.html"><img src="images/v..png" height="200px" width="200px"></a></div>
+  <div class="the">
+  </div>
+  <div id="names">
+    <!-- <h3 style="color: white;font-size: 30px;font-family:monospace;">&</h3> -->
+  </div>
+  <div class="big-box">
+    <div class="box">
+
+      <div class="box-inner">
+
+
+        <div class="box-front">
+          <h2>LOGIN</h2>
+
+          <!-- ************************************** LOGIN FORM **************************************************************** -->
+          <form action="login.php" method="post">
+
+
+            <fieldset id="f1">
+              <label for="username">USERNAME :
+                <input id="username" name="username" type="text" />
+              </label><br>
+
+              <label for="password">PASSWORD :
+                <input id="password" name="password" type="password"></label><br><br>
+            </fieldset>
+            <!-- <button id="l" name="Login" type="button">LOGIN</button> -->
+            <input  type="submit" name="submit" id="btn l" value="LOGIN" class="log" />
+            <br>
+
+
+            <a class="sign2" href="#">Sign Up ? </a>
+
+          </form>
+        </div>
+        <!-- ************************************** LOGIN FORM **************************************************************** -->
+
+
+
+        <!-- ************************************** SIGN UP FORM **************************************************************** -->
+        <div class="box-back">
+          <h2 style="margin:1px;">SIGN UP</h2>
+          <form action="conn.php" method="post">
+
+            <br>
+
+            <fieldset id="f2">
+              <legend>Username:</legend>
+              <label for="username">
+                <input id="username2" name="username" type="text" placeholder="" />
+              </label><br>
+            </fieldset>
+            <fieldset id="f2">
+              <legend>Password:</legend>
+              <label for="password"><input id="password2" name="password" type="password" required></label><br>
+            </fieldset>
+            <fieldset id="f2">
+              <legend>Email ID:</legend>
+              <label for="mail"><input id="mail" type="email" name="email" placeholder="Enter your mail"></label><br>
+            </fieldset>
+            <fieldset id="f2">
+              <legend>Gender :</legend>
+              <label id="inp" for="gender">MALE<input type="radio" name="gender" value="male"></label><br>
+              <label id="inp" for="gender">FEMALE<input type="radio" name="gender" value="female"></label><br>
+              <label id="inp" for="gender">OTHERS<input type="radio" name="gender" value="other"></label><br>
+            </fieldset>
+            <!-- <button id ="l" type="submit" id="sub">SUBMIT</button><br><br> -->
+            <input type="submit" id="l sub" name="submit" value="SUBMIT" class="sign">
+
+
+          </form>
+          <a class="log2" href="#">Login ? </a>
+        </div>
+        <!-- ************************************** SIGN UP FORM **************************************************************** -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ************************************** FORM END  **************************************************************** -->
+
+
+  <!-- ************************************** HEADER AND NAVIGATION **************************************************************** -->
+
+  <div class="big-box">
+    <header id="header">
+
+      <nav class="navigation">
+
+        <section class="logo"></section>
+
+        <section class="navigation__icon">
+          <span class="topBar"></span>
+          <span class="middleBar"></span>
+          <span class="bottomBar"></span>
+        </section>
+
+        <ul class="navigation__ul">
+          <li><a href="">HOME</a></li>
+          <li><a href="/algovisualizer-main/algovisualizer-main/algo.html"
+              style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">V.</a></li>
+          <li><a href="/extra.html">MORE</a></li>
+          <!-- <li><a href="#sortingAlgos">ALGOS</a></li> -->
+          <!-- <li><a class="log" onclick=changecolor() href="#">LOGIN</a></li> -->
+        </ul>
+
+        <section class="navigation__social">
+          <ul class="navigation__social-ul">
+            <li>
+              <a href="" class="social-icon"></a>
+            </li>
+            <li>
+              <a href="" class="social-icon"></a>
+            </li>
+            <li>
+              <a href="" class="social-icon"></a>
+            </li>
+            <li>
+              <a href="" class="social-icon"></a>
+            </li>
+          </ul>
+          <div class="bg">
+            <h1 class="v">VISUALIZER.</h1>
+          </div>
+        </section>
+
+      </nav>
+      <!-- ************************************** HEADER AND NAVIGATION ENDS **************************************************************** -->
+    </header>
+  </div>
+
+  <!-- <div class="big-box"> -->
+    <!-- <section class="inner-container"> -->
+    <!-- <h1 class="info-algo" id="sortingAlgos">ABOUT ALGOS</h1>
+    <div class="about-sorting">
+      <div class="algo" id="colr">
+        <h1>Bubble Sort</h1> -->
+        <!-- <p>
+          Bubble sort is a basic algorithm for arranging a string of numbers or other elements in the correct order.
+          The method works by examining each set of adjacent elements in the string, from left to right, switching
+          their positions if they are out of order. The algorithm then repeats this process until it can run through
+          the entire string and find no two elements that need to be swapped.
+        </p> -->
+        <!-- <h1> When to use a bubble sort?</h1>
+          
+          Bubble sort is a simple sorting algorithm and its primary uses include:
+          <br>
+          <b>Teach basic sorting:</b> Bubble sort is used to teach new programmers and computer science students the basics of sorting. It provides learners with the foundational principles of sorting datasets thanks to its ease of implementation. <br>
+          
+          <b>Sort small datasets:</b> Bubble sort is also ideal for sorting small datasets with a few numbers of elements. You can't use it for large datasets because it takes a long time to compare pairs of elements. <br>
+          
+          S<b>ort orderly datasets:</b> You can also use bubble sort to arrange a dataset that's already sorted but requires a final check to verify that the elements are in the correct order. <br> -->
+      <!-- </div>
+
+      <div class="algo">
+        <h1> Selection Sort</h1>
+        <p>Selection sort finds the smallest element in the array and place it on the first place on the list, then it
+          finds the second smallest element in the array and place it on the second place. This process continues
+          until all the elements are moved to their correct ordering. It carries running time O(n2) which is worst
+          than insertion sort.</p>
+      </div> -->
+
+      <!-- <div class="algo">
+        <h1> Insertion Sort</h1>
+
+        <p>As the name suggests, insertion sort inserts each element of the array to its proper place. It is a very
+          simple sort method which is used to arrange the deck of cards while playing bridge.</p>
+      </div>
+
+      <div class="algo">
+        <h1> Merge Sort</h1>
+
+        <p>Merge sort follows divide and conquer approach in which, the list is first divided into the sets of equal
+          elements and then each half of the list is sorted by using merge sort. The sorted list is combined again to
+          form an elementary sorted array.</p>
+      </div> -->
+<!-- 
+      <div class="algo">
+        <h1> Quick Sort</h1>
+
+        <p> Quick sort is the most optimized sort algorithms which performs sorting in O(n log n) comparisons. Like
+          Merge sort, quick sort also work by using divide and conquer approach.</p>
+      </div>
+    </div>
+     </section> -->
+  <!-- </div> -->
+
+  <!-- <div class="big-box">
+    <div class="contact">
+      <h2 style="color: white;">contact us</h2>
+    </div>
+  </div> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="page1.js"></script>
+<script>
+
+  function changecolor() {
+    document.body.style.backgroundColor = "#fcfcfc";
+    document.body.style.backgroundImage.opacity = "0";
+    document.body.style.backgroundImage.display = "none";
+    document.getElementById("names").style.transition = "800ms";
+    // $('.bod').toggleClass('clicked');
+    document.body.style.transition = "1s";
+    document.getElementById("header").style.opacity = "0.01";
+    document.getElementById("header").style.display = "none";
+    document.getElementById("header").style.display.transition = "1s";
+    document.getElementById("header").style.transition = "1s";
+    document.getElementById("header").style.visibility = "hidden";
+    document.getElementById("header").style.visibility.transition = "1s";
+    document.getElementById("names").style.visibility = "hidden";
+    document.getElementById("names").style.opacity = "0";
+
+
+  }
+       //!!!!!!!!!!!! CHANGE BOX FRONT A CLASSS NO USEE!!!!!!!!!!!!!!!!!!!!!!!!
+
+</script>
+
+</html>
